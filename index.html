@@ -1,230 +1,337 @@
 <!DOCTYPE html>
-<html lang="-pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="src/assets/flavico.png" type="image/x-icon">
-    <link rel="stylesheet" href="src/styles/main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio de Filipe Silveira, estudante de ADS focado em backend, automação e desenvolvimento de sistemas." />
+  <title>Filipe Silveira | Desenvolvedor Backend Júnior</title>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8Z45ET8LG"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-C8Z45ET8LG');
-    </script>
-
-    <!-- Bootstrap Links-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
-    <!-- LINK FONT -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
-
-    <title>Filipe Silveira - Desenvolvedor Junior</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="src/css/style.css" />
 </head>
-
-<body>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100" tabindex="0">
+  <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-        <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="src/assets/assinatura_transparente.png" height="45px">
-                </a>
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#home" aria-label="Ir para o início">
+       <span class="brand-mark"> <!-- ADICIONEI UMA IMAGEM DE CARICATURA -->
+            <img src="src/assets/caricatura2.png" height="40px" >
+        </span>
+        <span class="fw-bold">Filipe Silveira</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#home">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#trajetoria">Trajetória</a></li>
+          <li class="nav-item"><a class="nav-link btn btn-primary btn-sm px-3 ms-lg-2" href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav gap-3">
-                        <li class="nav-item"><a href="#sobremim" aria-current="page" class="nav-link">Sobre Mim</a></li>
-                        <li class="nav-item"><a href="#skills" aria-current="page" class="nav-link">Skills</a></li>
-                        <li class="nav-item"><a href="#projetos" aria-current="page" class="nav-link">Projetos</a></li>
-                        <li class="nav-item"><a href="#redesocial" aria-current="page" class="nav-link">Redes Sociais</a></li>
-                    </ul>
-                </div>
+  <main>
+    <section id="home" class="hero-section">
+      <div class="container position-relative">
+        <div class="row align-items-center min-vh-100 py-5">
+          <div class="col-lg-7 hero-copy reveal">
+            <p class="eyebrow mb-3">Análise e Desenvolvimento de Sistemas • Backend • Automação</p>
+            <h1 class="display-3 fw-bold lh-1 mb-4">Filipe Silveira</h1>
+            <p class="hero-kicker mb-3">Desenvolvedor Júnior com base prática em operações, processos e melhoria contínua.</p>
+            <p class="lead text-secondary-emphasis mb-4">
+              Tenho experiência prática em ambientes operacionais e utilizo tecnologia para estruturar processos, reduzir falhas e aumentar eficiência. Atualmente desenvolvo soluções com Node.js, TypeScript e Python, com foco em sistemas aplicáveis ao mundo real.
+            </p>
+            <div class="d-flex flex-column flex-sm-row gap-3">
+              <a class="btn btn-primary btn-lg px-4" href="#projetos"><i class="bi bi-grid-1x2-fill me-2"></i>Ver projetos</a>
+              <a class="btn btn-outline-light btn-lg px-4" href="#contato"><i class="bi bi-chat-dots me-2"></i>Falar comigo</a>
             </div>
-        </nav>
-
-        <div class="container col-xxl-8 px4 py-5">
-            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-                <div class="col-10 col-sm-8 col-lg-6">
-                    <div class="col-12 col-lg-6 text-center">
-                        <img class="img-fluid rounded-bottom-pill d-block mx-auto" src="src/assets/caricatura_completa.png" width="700" height="700" loading="lazy" id="caricatura">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Filipe Silveira</h1>
-                    <h5 class="text-body-tertiary">Desenvolvedor Júnior</h6>
-                    <p class="lead">Em busca da primeira oportunidade na área!
-                        Com conhecimentos em JavaScript, Node.js, TypeScript, APIs, Express, SQL e Firebase.
-                    </p>
-                </div>
+            <div class="hero-badges mt-4 d-flex flex-wrap gap-2">
+              <span class="badge-pill">Node.js</span>
+              <span class="badge-pill">TypeScript</span>
+              <span class="badge-pill">Next.js</span>
+              <span class="badge-pill">SQL</span>
+              <span class="badge-pill">Automação</span>
             </div>
+          </div>
+
+          <div class="col-lg-5 mt-5 mt-lg-0 reveal delay-2">
+            <div class="profile-card glass-card text-center p-4 p-lg-5">
+              <div class="avatar-frame mx-auto mb-4">
+                <span class="avatar-initials">
+                    <img src="src/assets/caricatura2.png" alt="" width="105">
+                </span>
+              </div>
+              <h2 class="h3 fw-bold mb-2">Foco em backend e sistemas</h2>
+              <p class="text-secondary mb-4">Perfil orientado à lógica, organização e construção de soluções voltadas para otimização de processos e eficiência operacional.</p>
+              <div class="mini-metrics row g-3">
+                <div class="col-4"><div class="metric"><strong>ADS</strong><span>5º período</span></div></div>
+                <div class="col-4"><div class="metric"><strong>SAP</strong><span>MM - WM - SD</span></div></div>
+                <div class="col-4"><div class="metric"><strong>Stack</strong><span>TypeScript - Node - Python</span></div></div>
+              </div>
+            </div>
+          </div>
         </div>
-        
+      </div>
+    </section>
 
-        <div class="container my-5">
-            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-end-3 border shadow-lg">
-                <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-                    <h1 class="display-4 fw-bold lh-1 text-body-emphasis" id="sobremim">SOBRE MIM</h1>
-                    <p class="lead">
-                        Sou desenvolvedor em formação, com foco em construir soluções práticas e bem estruturadas. Venho  da área de logistica,
-                        onde aprendi a lidar com processos, sistemas, responsabilidades e pressão real.<br>
-                        Hoje aplico essa visão no desenvolvimento, buscando código limpo, organizado e evolução constante.
-                        <br><br>
-                        Estou em transição de carreira e encaro o aprendizado como parte do trabalho. Gosto de entender o porque das coisas,
-                        melhorar o que já existe e transformar ideias em algo funcional.
-                    </p>
-                </div>
-                <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-                    <div class="col-10 col-sm-8 col-lg-6">
-                        <img class="rounded-3" src="src/assets/mascote_filipe.png" width="420" id="mascote">
-                    </div>
-                </div>
+    <section id="sobre" class="section section-alt">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5 reveal">
+            <div class="info-card glass-card p-4 p-lg-5 h-100">
+              <p class="section-label mb-2">Sobre mim</p>
+              <h2 class="section-title mb-4">Da operação para a tecnologia</h2>
+              <p>
+                Entrei em uma empresa de produção de calçado de segurança, como auxiliar de serviços gerais, passei para experdição, e almoxarifado, na operação e posteriormente para o adminstrativo. Isso me deu visão prática de processo, auditoria, organização e melhoria contínua.
+              </p>
+              <p class="mb-0">
+                Hoje estudo Análise e Desenvolvimento de Sistemas, desenvolvo projetos para portfólio com foco em backend, automação e sistemas. Não estou tentando parecer mágico. Estou tentando ser útil, consistente e técnico.
+              </p>
             </div>
-        </div>
-
-        <div class="container my-5">
-            <div class="row px-4 pe-lg-0 pt-lg-5 align-items-center rounded-end-3 border shadow-lg">
-                <h1 class="display-4 fw-bold lh-1 text-body-emphasis" id="skills">SKILLS</h1>
-
-                <div class="skills-carousel overflow-hidden py-4">
-                    <div class="skills-track py-5">
-                        <img src="https://skillicons.dev/icons?i=js,html,css,ts,express,react,ps,firebase,bootstrap,discord,bots,git,github,mysql,nodejs,php,postgres,postman,py,vscode&perline=50" class="skills-img" />
-                        <img src="https://skillicons.dev/icons?i=js,html,css,ts,express,react,ps,firebase,bootstrap,discord,bots,git,github,mysql,nodejs,php,postgres,postman,py,vscode&perline=50" class="skills-img"/>
-                        <img src="https://skillicons.dev/icons?i=js,html,css,ts,express,react,ps,firebase,bootstrap,discord,bots,git,github,mysql,nodejs,php,postgres,postman,py,vscode&perline=50" class="skills-img"/>
-                    </div>
-                </div>
-
+          </div>
+          <div class="col-lg-7 reveal delay-2">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <article class="skill-card">
+                  <i class="bi bi-diagram-3"></i>
+                  <h3>Processos</h3>
+                  <p>Mapeamento, padronização e leitura de fluxo com visão operacional, de criação a revisão de processos e documentação técnicas.</p>
+                </article>
+              </div>
+              <div class="col-md-6">
+                <article class="skill-card">
+                  <i class="bi bi-code-slash"></i>
+                  <h3>Desenvolvimento</h3>
+                  <p>Python, Typescript, JavaScript, Node.jS, APIs REST, estruturação de projetos e boas práticas.</p>
+                </article>
+              </div>
+              <div class="col-md-6">
+                <article class="skill-card">
+                  <i class="bi bi-clipboard-data"></i>
+                  <h3>Organização</h3>
+                  <p>Pacote Office, SAP Modulos: MM, WM e SD, rotina administrativa, controle de informação, suporte operacional e suportes em indicativos.</p>
+                </article>
+              </div>
+              <div class="col-md-6">
+                <article class="skill-card">
+                  <i class="bi bi-lightning-charge"></i>
+                  <h3>Automação</h3>
+                  <p>Projetos que reduzem retrabalho e transformam tarefa manual mais fáceis.</p>
+                </article>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="container my-5">
-            <div class="row px-4 pe-lg-0 pt-lg-5 align-items-center rounded-end-3 border shadow-lg py-5">
-                <h1 id="projetos" class="display-4 fw-bold lh-1 text-body-emphasis">PROJETOS</h1>
-                <div class="row">
-                    <div class="pt-5">
-
-                            <div class="row justify-content-center g-4">
-
-                                <div class="col-md-6 col-lg-4 d-flex">
-                                    <div class="p-4 border rounded-4 shadow-sm bg-body-tertiary text-center card-hover w-100 h-100 d-flex flex-column">
-                                        <div class="d-flex justify-content-center mb-3">
-                                            <img src="src/assets/shadown.gif" class="rounded-circle" height="140" width="140" />
-                                        </div>
-                                        <h2 class="fw-normal">ShadownJin - DiscordBot</h2>
-                                        <p class="text-info-emphasis text-center">
-                                            ShadownJin é um bot para Discord desenvolvido com foco em arquitetura, escalabilidade e separação clara de responsabilidades.<br>
-                                            Inspirado no conceito de progressão de Solo Leveling, o bot implementa sistemas de XP, economia e moderação como camadas de domínio, não como comandos isolados.
-                                        </p>
-                                        <p>
-                                            Tecnologias usadas:<br>
-                                            <span class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill">Discord.js (v14+)</span>
-                                            <span class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill">Firebase</span>
-                                            <span class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill">Dotenv</span>
-                                            <span class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill">GitHub Actions</span>
-                                        </p>
-                                        <p class="d-flex justify-content-center">
-                                            <a href="https://github.com/ShadownJin/ShadownJin" class="btn btn-secondary" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> GitHub</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-4 d-flex">
-                                    <div class="p-4 border rounded-4 shadow-sm bg-body-tertiary text-center card-hover w-100 h-100 d-flex flex-column">
-                                        <div class="d-flex justify-content-center mb-3">
-                                            <img src="src/assets/RFID Marluvas.png" class="rounded-circle" height="140" width="140" />
-                                        </div>
-                                        <h2 class="fw-normal">Software Etiqueta RFID</h2>
-                                        <p>
-                                            Software de impressão de etiquetas de RFID, com suporte a ERC de 24 dígitos.<br>
-                                            O programa foi desenvolvido devido à uma demanda do setor onde trabalho.
-                                        </p>
-                                        <p>
-                                            Tecnologias usadas:<br>
-                                            <span class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill">Python 3.14</span>
-                                            <span class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill">CustomTkinter</span>
-                                            <span class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill">SQLite3</span>
-                                            <span class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill">Win32Print</span>
-                                        </p>
-                                        <p class="d-flex justify-content-center gap-2">
-                                            <a href="https://github.com/FilipeSilveira-Tech/RFID-Almoxarifado-Marluvas" class="btn btn-secondary" target="_blank"><i class="bi bi-github"></i> GitHub</a>
-                                            <a href="https://github.com/FilipeSilveira-Tech/RFID-Almoxarifado-Marluvas/releases/download/1.0.0/RFID.Marluvas.exe" class="btn btn-primary" target="_blank"><i class="bi bi-download"> Download</i></a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-4 d-flex">
-                                    <div class="p-4 border rounded-4 shadow-sm bg-body-tertiary text-center card-hover w-100 h-100 d-flex flex-column">
-                                        <div class="d-flex justify-content-center mb-3">
-                                            <img src="src/assets/caricatura.png" class="rounded-circle" height="140" width="140" />
-                                        </div>
-                                        <h2 class="fw-normal">Site Portfólio</h2>
-                                        <p>
-                                            Código-fonte do meu site.<br>
-                                        </p>
-                                        <p>
-                                            Tecnologias usadas:<br>
-                                            <span class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill">Bootstrap 5.3.8</span>
-                                            <span class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill">HTML5</span>
-                                            <span class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill">CSS5</span>
-                                            <span class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill">Git</span>
-                                        </p>
-                                        <p class="d-flex justify-content-center">
-                                            <a href="https://github.com/FilipeSilveira-Tech/portfolio-web.io" class="btn btn-secondary" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> GitHub</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                    </div>
-                </div>
-            </div>
+    <section id="habilidades" class="section">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <p class="section-label mb-2">Stack</p>
+          <h2 class="section-title">Tecnologias que estou consolidando</h2>
+          <p class="section-subtitle">O foco está em base sólida, não em encher currículo com ferramenta aleatória.</p>
         </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3 reveal">
+            <article class="stack-card h-100">
+              <i class="bi bi-braces"></i>
+              <h3>JavaScript / TypeScript</h3>
+              <p>Tipagem, organização e lógica para código mais previsível.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal delay-1">
+            <article class="stack-card h-100">
+              <i class="bi bi-cpu"></i>
+              <h3>Node.js</h3>
+              <p>Backend, APIs, integração com banco e automação de tarefas.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal delay-2">
+            <article class="stack-card h-100">
+              <i class="bi bi-window-stack"></i>
+              <h3>Python</h3>
+              <p>Automações, softwares com interfaceis intuitivas e fácil utilização.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal delay-3">
+            <article class="stack-card h-100">
+              <i class="bi bi-database"></i>
+              <h3>SQL e dados</h3>
+              <p>Estruturação, consulta, relacionamento e tratamento de dados.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="container">
-            <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
-                <div class="col mb-3">
-                    <h5 id="redesocial">Redes Sociais</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2">
-                            <a href="https://www.linkedin.com/in/filipesilveira-dev/" class="nav-link p-0 text-body-secondary" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin" id="linkedin-icon"></i> Linkedin</a>
-                        </li>
-                        <li class="nav-item mb-2">
-                            <a href="https://github.com/FilipeSilveira-Tech" class="nav-link p-0 text-body-secondary" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" id="github-icon"></i> GitHub</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col mb-3"></div>
-                <div class="col mb-3"></div>
-                <div class="col mb-3"></div>
-                <div class="col mb-3">
-                    <div class="d-flex flex-column justify-content-center">
-                        <a href="/" class="d-flex align-items-center justify-content-center mb-3 link-body-emphasis text-decoration-none">
-                            <img src="src/assets/assinatura_transparente.png" height="120">
-                        </a>
-                        <p class="text-body-secondary text-center">&copy; Filipe Silveira, 2025</p>
-                    </div>
-                </div>
-            </footer>
+    <section id="projetos" class="section section-alt">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <p class="section-label mb-2">Projetos</p>
+          <h2 class="section-title">Portfólio com espaço para crescer</h2>
+          <p class="section-subtitle">Aqui estão meus projetos prontos e em desenvolvimento no momento.</p>
         </div>
 
-    </div> <!-- FIM CONTAINER-->
+        <div class="row g-4">
+          <div class="col-lg-4 reveal">
+            <a href="https://github.com/FilipeSilveira-Tech/RFID-Almoxarifado-Marluvas" target="_blank" style="text-decoration: none;">
+                <article class="project-card h-100">
+                <div class="project-thumb thumb-placeholder">
+                    <img src="src/assets/RFID Marluvas.png" alt="logo RFID Marluvas" height="200px">
+                </div>
+                <div class="project-body">
+                    <h3>RFID Almoxarifado</h3>
+                    <p>Sistema para controle de etiquetas RFID, histórico, impressão e organização de ativos para setor do almoxarifado.</p>
+                    <div class="project-tags">
+                    <span>Python</span><span>RFID</span><span>Desktop</span><span>CustomTkinter</span>
+                    </div>
+                </div>
+                </article>
+            </a>
+          </div>
+          <div class="col-lg-4 reveal delay-1">
+            <a href="https://github.com/FilipeSilveira-Tech/portfolio-web.io" target="_blank" style="text-decoration: none;">
+                <article class="project-card h-100">
+                <div class="project-thumb thumb-placeholder">
+                    <img src="src/assets/LOGO2.png" alt="" height="200px">
+                </div>
+                <div class="project-body">
+                    <h3>Portfólio Profissional</h3>
+                    <p>Site pessoal com design mais sério, foco em apresentação técnica e projetos reais.</p>
+                    <div class="project-tags">
+                    <span>HTML</span><span>CSS</span><span>Bootstrap</span>
+                    </div>
+                </div>
+                </article>
+            </a>
+          </div>
+          <div class="col-lg-4 reveal delay-2">
+            <a href="https://github.com/ShadownJin/ShadownJin" target="_blank" style="text-decoration: none;">
+                <article class="project-card h-100">
+                <div class="project-thumb thumb-placeholder">
+                    <img src="src/assets/shadown.gif"  height="200px"/>
+                </div>
+                <div class="project-body">
+                    <h3>ShadownJin - DiscordBot</h3>
+                    <p>ShadownJin é um bot para Discord desenvolvido com foco em arquitetura, escalabilidade e separação clara de responsabilidades.</p>
+                    <div class="project-tags">
+                    <span>Node.js</span><span>API</span><span>TypeScript</span><span>Firebase</span>
+                    </div>
+                </div>
+                </article>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section id="trajetoria" class="section">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <p class="section-label mb-2">Trajetória</p>
+          <h2 class="section-title">Jornada profissional e acadêmica</h2>
+          <p class="section-subtitle">Aqui a história real é mais forte do que inventar cargo de sênior em startup imaginária.</p>
+        </div>
 
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <span class="timeline-dot"><i class="bi bi-mortarboard-fill"></i></span>
+            <div class="timeline-content">
+              <h3>ADS e transição para tecnologia</h3>
+              <p class="timeline-meta">2023 - atual</p>
+              <p>Atualmente ainda trabalhando na logística, busco minha transição para o TI, formando no fim do 1° semestre de 2026 em Análise e Desenvolvimento de Sistemas, com foco em backend, automações, contrução de softwares e aprendizado e especialização.</p>
+            </div>
+          </article>
 
-    <!-- MAIN SCRIP-->
-     <script src="src/scripts/main.js"></script>
+          <article class="timeline-item reveal delay-1">
+            <span class="timeline-dot"><i class="bi bi-briefcase-fill"></i></span>
+            <div class="timeline-content">
+              <h3>Almoxarifado e apoio administrativo</h3>
+              <p class="timeline-meta">2023 - 2024</p>
+              <p>Entrando como funcionário operacional, mas com rápido aprendizado no SAP o ERP da empresa, me tornei KeyUser SAP do setor nos modulos MM, WM e SD, participando de projetos junto ao TI de integrações de tecnologias como RFID atrávez de APIs, e responsábilidade como atuador direto como apoio na gestão do almoxarifado junto ao coordenado, realizando mapeamento da operação, revisão de procedimentos, ajudas em projetos internos e atuação em rotinas adminstrativas.</p>
+            </div>
+          </article>
 
-    <!-- BOOTSTRAP SCRIPT-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+          <article class="timeline-item reveal delay-2">
+            <span class="timeline-dot"><i class="bi bi-box-seam-fill"></i></span>
+            <div class="timeline-content">
+              <h3>Expedição e rotina logística</h3>
+              <p class="timeline-meta">Agosto de 2022 - Maio de 2023</p>
+              <p>Experiência com fluxo de materiais, conferência, movimentação e transferência de carga para o centro de distribuição da empresa e visão prática de operação.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal delay-3">
+            <span class="timeline-dot"><i class="bi bi-tree-fill"></i></span>
+            <div class="timeline-content">
+              <h3>Marluvas Equipamentos de Segurança - Início na empresa</h3>
+              <p class="timeline-meta">Maio de 2021 - Agosto de 2022</p>
+              <p>Entrada como jardineiro no setor de zeladoria, primeiro passo da trajetória interna que deu base prática para entender rotina e responsabilidade.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section section-contact">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-9 text-center reveal">
+            <p class="section-label mb-2">Contato</p>
+            <h2 class="section-title text-white">Vamos conversar sobre vaga, projeto ou parceria</h2>
+            <p class="section-subtitle text-white-50">Se o projeto precisar de organização, lógica e alguém que não tenha medo de mexer em processo bagunçado, eu posso ajudar.</p>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-2 justify-content-center">
+          <div class="col-md-4 reveal">
+            <a class="contact-card h-100" href="mailto:contato@filipesilveira.dev">
+              <i class="bi bi-envelope"></i>
+              <h3>Email</h3>
+              <p>contato@filipesilveira.dev</p>
+            </a>
+          </div>
+          <div class="col-md-4 reveal delay-1">
+            <a class="contact-card h-100" href="https://github.com/FilipeSilveira-Tech" target="_blank" rel="noreferrer">
+              <i class="bi bi-github"></i>
+              <h3>GitHub</h3>
+              <p>FilipeSilveira-Tech</p>
+            </a>
+          </div>
+          <div class="col-md-4 reveal delay-2">
+            <a class="contact-card h-100" href="https://www.linkedin.com/in/filipesilveira-dev/" target="_blank" rel="noreferrer">
+              <i class="bi bi-linkedin"></i>
+              <h3>LinkedIn</h3>
+              <p>filipesilveira-dev</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="signature-box reveal delay-3 mt-5">
+          <div class="signature-line"></div>
+          <p class="mb-1 fw-semibold">Filipe Silveira</p>
+          <p class="mb-0 text-white-50">Desenvolvedor backend em formação • ADS • Automação e sistemas</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer py-4">
+    <div class="container text-center">
+      <small>© 2026 Filipe Silveira. Feito com Bootstrap, foco e um pouco de teimosia útil.</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="src/js/script.js"></script>
 </body>
-
 </html>
