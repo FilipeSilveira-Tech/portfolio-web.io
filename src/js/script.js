@@ -1,38 +1,25 @@
-// Menu mobile toggle
-const menuToggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector("nav ul");
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Navbar State Changer (Detecção de Scroll)
+  const navbar = document.querySelector(".pixel-nav");
 
-menuToggle?.addEventListener("click", () => {
-  nav.classList.toggle("active");
-});
-
-// Scroll suave para âncoras
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }
-
-    // Fecha menu mobile ao clicar
-    nav.classList.remove("active");
-  });
-});
-
-// Animação simples ao scroll
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("is-visible");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
     }
   });
-}, {
-  threshold: 0.1
-});
 
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  // 2. Comportamento de clique e rolagem limpa (Menu Mobile)
+  const navLinks = document.querySelectorAll(".pixel-nav-link");
+  const menuToggle = document.getElementById("navContent");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (menuToggle.classList.contains("show")) {
+        const bsCollapse = new bootstrap.Collapse(menuToggle);
+        bsCollapse.hide();
+      }
+    });
+  });
+});

@@ -1,0 +1,323 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS & DESIGN SYSTEM
+   ========================================================================== */
+:root {
+  --bg-main: #0B0F19;
+  --bg-alt: #111827;
+  --text-primary: #FFFFFF;
+  --text-muted: #9CA3AF;
+  --accent-blue: #0072FF;
+  --accent-cyan: #00F2FE;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.07);
+  --glass-border-hover: rgba(0, 114, 255, 0.3);
+  --font-family: 'Plus Jakarta Sans', sans-serif;
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  overflow-x: hidden;
+  letter-spacing: -0.01em;
+}
+
+/* Utilitários Extras */
+.text-primary-gradient {
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-secondary-muted { color: var(--text-muted); font-weight: 400; line-height: 1.6; }
+.fw-extrabold { font-weight: 800; }
+.max-w-xl { max-width: 580px; }
+.max-w-md { max-width: 500px; }
+.max-w-3xl { max-width: 760px; }
+.fs-7 { font-size: 0.785rem; }
+.tracking-widest { letter-spacing: 0.15em; }
+.tracking-wider { letter-spacing: 0.08em; }
+.tracking-tight { letter-spacing: -0.03em; }
+
+/* ==========================================================================
+   NAVBAR DINÂMICA PREMIUM
+   ========================================================================== */
+.dynamic-navbar {
+  background: rgba(11, 15, 25, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--glass-border);
+  transition: var(--transition-smooth);
+  padding: 18px 0;
+}
+
+.dynamic-navbar.scrolled {
+  padding: 12px 0;
+  background: rgba(11, 15, 25, 0.9);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-nav .nav-link {
+  color: #D1D5DB !important;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--accent-cyan) !important;
+}
+
+/* ==========================================================================
+   BOTÕES E BADGES CUSTOMIZADOS
+   ========================================================================== */
+.btn-gradient {
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+  color: #fff !important;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 15px rgba(0, 114, 255, 0.2);
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 114, 255, 0.4);
+}
+
+.btn-outline-custom {
+  background: transparent;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+.btn-outline-custom:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+.badge-premium {
+  background: rgba(0, 114, 255, 0.1);
+  border: 1px solid rgba(0, 114, 255, 0.2);
+  color: #60A5FA;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   HERO & ESTRUTURA GLASSMORPHISM
+   ========================================================================== */
+.hero-section {
+  background-color: var(--bg-main);
+}
+
+.glow-bg {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0,114,255,0.15) 0%, rgba(0,0,0,0) 70%);
+  top: -10%;
+  right: -5%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+}
+
+.avatar-frame {
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(135deg, rgba(0,242,254,0.2), rgba(0,114,255,0.2));
+  border-radius: 50%;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.metric-box {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 12px 8px;
+}
+.metric-box strong { display: block; color: #fff; font-size: 0.95rem; }
+.metric-box span { font-size: 0.75rem; color: var(--text-muted); display: block; margin-top: 2px;}
+
+/* ==========================================================================
+   SECTIONS & CARDS (SOBRE / SKILLS / PORTFÓLIO)
+   ========================================================================== */
+.section { padding: 100px 0; }
+.section-alt { background-color: var(--bg-alt); }
+
+.glass-card-hover {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 30px;
+  height: 100%;
+  transition: var(--transition-smooth);
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-5px);
+  border-color: var(--glass-border-hover);
+  background: rgba(0, 114, 255, 0.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.stack-icon i {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #00F2FE, #0072FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Cards de Projeto */
+.card-link-wrapper { text-decoration: none; display: block; }
+.premium-card {
+  background: var(--bg-main);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.project-thumb {
+  position: relative;
+  height: 200px;
+  background: #1F2937;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-thumb .asset-img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transition: var(--transition-smooth);
+}
+
+.thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 15, 25, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.premium-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-blue);
+  box-shadow: 0 20px 40px rgba(0, 114, 255, 0.15);
+}
+
+.premium-card:hover .project-thumb .asset-img { transform: scale(1.06); }
+.premium-card:hover .thumb-overlay { opacity: 1; }
+
+.tag-item {
+  font-size: 0.75rem;
+  background: #1F2937;
+  color: #9CA3AF;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-right: 6px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   LINHA DO TEMPO (TRAJETÓRIA) PREMIUM
+   ========================================================================== */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-blue), transparent);
+  top: 0;
+  bottom: 0;
+  left: 30px;
+}
+
+.timeline-item-premium {
+  position: relative;
+  padding-left: 80px;
+  margin-bottom: 40px;
+}
+
+.timeline-icon-box {
+  position: absolute;
+  left: 12px;
+  top: 6px;
+  width: 38px;
+  height: 38px;
+  background: #1F2937;
+  border: 2px solid var(--accent-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  z-index: 2;
+}
+
+.bg-primary-gradient { background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue)); border: none; }
+.bg-secondary-gradient { background: linear-gradient(135deg, #3B82F6, #1D4ED8); border: none; }
+
+.badge-timeline {
+  font-size: 0.75rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--glass-border);
+  padding: 4px 12px;
+  border-radius: 30px;
+  color: #9CA3AF;
+}
+
+/* ==========================================================================
+   CONTATO & FOOTER
+   ========================================================================== */
+.contact-action-card {
+  text-decoration: none;
+  display: block;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 30px;
+  transition: var(--transition-smooth);
+}
+
+.contact-action-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-cyan);
+  background: rgba(0, 242, 254, 0.02);
+  box-shadow: 0 15px 30px rgba(0, 242, 254, 0.1);
+}
+
+.contact-icon i { font-size: 2rem; }
+.signature-line { width: 60px; height: 3px; background: linear-gradient(to right, var(--accent-cyan), var(--accent-blue)); border-radius: 2px;}
+.footer { border-top: 1px solid var(--glass-border); }
+
+/* Adaptações Responsivas para a Linha do Tempo */
+@media (max-width: 768px) {
+  .section { padding: 60px 0; }
+  .display-2 { font-size: 3rem; }
+}
