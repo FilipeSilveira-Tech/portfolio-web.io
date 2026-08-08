@@ -1,25 +1,77 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // 1. Navbar State Changer (Detecção de Scroll)
-  const navbar = document.querySelector(".pixel-nav");
+// Tema claro/escuro
+const themeToggle = document.getElementById('themeToggle');
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  if (themeToggle) {
+    themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
+  }
+}
+
+if (themeToggle) {
+  const current = document.documentElement.getAttribute('data-theme') || 'light';
+  themeToggle.setAttribute('aria-pressed', String(current === 'dark'));
+
+  themeToggle.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    setTheme(isDark ? 'light' : 'dark');
+  });
+}
+
+// Menu mobile
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
   });
 
-  // 2. Comportamento de clique e rolagem limpa (Menu Mobile)
-  const navLinks = document.querySelectorAll(".pixel-nav-link");
-  const menuToggle = document.getElementById("navContent");
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      if (menuToggle.classList.contains("show")) {
-        const bsCollapse = new bootstrap.Collapse(menuToggle);
-        bsCollapse.hide();
-      }
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
     });
   });
-});
+}
+
+// Reveal on scroll
+const revealSelectors = [
+  '.hero__copy',
+  '.hero__portrait',
+  '.section__eyebrow',
+  '.section__title',
+  '.sobre__text',
+  '.sobre__path',
+  '.stat-row',
+  '.edu-card',
+  '.course-item',
+  '.project-card',
+  '.timeline__item',
+  '.contact-card'
+];
+
+const revealEls = document.querySelectorAll(revealSelectors.join(','));
+revealEls.forEach((el) => el.classList.add('reveal'));
+
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (prefersReducedMotion) {
+  revealEls.forEach((el) => el.classList.add('is-visible'));
+} else {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  revealEls.forEach((el) => observer.observe(el));
+}

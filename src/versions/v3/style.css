@@ -1,0 +1,308 @@
+/* ==========================================================================
+   VARIAVEIS DE DESIGN SYSTEM & RETRO PREMIUM
+   ========================================================================== */
+:root {
+  --terminal-bg: #0A0A0F;
+  --terminal-bg-alt: #101018;
+  --text-bright: #F0F0F5;
+  --text-dim: #8E8E9F;
+  --neon-green: #00FF66;
+  --neon-magenta: #FF007F;
+  --neon-blue: #00DFFF;
+  --pixel-border: 2px solid #2A2A3A;
+  --pixel-border-bright: 2px solid var(--neon-green);
+}
+
+body {
+  background-color: var(--terminal-bg);
+  color: var(--text-bright);
+  font-family: 'JetBrains Mono', monospace;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Títulos especiais em Pixel Art */
+.pixel-font, .pixel-title, .pixel-title-sm, .pixel-brand, .pixel-nav-link, .pixel-label, .pixel-btn-primary, .pixel-btn-secondary {
+  font-family: 'Pixelify Sans', sans-serif;
+  letter-spacing: 1px;
+}
+
+.pixel-title {
+  font-size: 3.5rem;
+  text-shadow: 3px 3px 0px var(--neon-magenta);
+}
+
+.text-green { color: var(--neon-green); }
+.text-magenta { color: var(--neon-magenta); }
+.text-blue { color: var(--neon-blue); }
+.text-light-gray { color: var(--text-dim); line-height: 1.6; }
+.max-w-md { max-width: 500px; }
+.max-w-3xl { max-width: 760px; }
+
+/* CRT Scanlines Overlay (Muito sutil para simular monitor de tubo premium) */
+.crt-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+.pixel-nav {
+  background-color: rgba(10, 10, 15, 0.95);
+  border-bottom: 3px solid #1F1F2E;
+  padding: 15px 0;
+  transition: all 0.3s steps(4);
+}
+
+.pixel-nav.scrolled {
+  border-bottom-color: var(--neon-green);
+  box-shadow: 0 4px 0px rgba(0, 255, 102, 0.1);
+}
+
+.pixel-avatar-border {
+  border: 2px solid var(--neon-green);
+  padding: 2px;
+  background: #000;
+  display: inline-flex;
+}
+
+.pixel-nav-link {
+  color: var(--text-dim) !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s steps(2);
+}
+
+.pixel-nav-link:hover, .pixel-nav-link.active {
+  color: var(--neon-green) !important;
+  text-shadow: 2px 2px 0px rgba(0, 255, 102, 0.3);
+}
+
+/* ==========================================================================
+   CARDS EM PIXEL ART (BLOCKY STYLE)
+   ========================================================================== */
+.pixel-card {
+  background: var(--terminal-bg-alt);
+  border: 3px solid #2A2A3A;
+  box-shadow: 6px 6px 0px #1A1A26;
+  border-radius: 0px; /* Pixel art não usa borda arredondada */
+  transition: all 0.2s steps(4);
+}
+
+.border-magenta-shadow {
+  box-shadow: 6px 6px 0px var(--neon-magenta);
+}
+
+.pixel-card-hover {
+  background: var(--terminal-bg-alt);
+  border: 3px solid #2A2A3A;
+  box-shadow: 4px 4px 0px #151520;
+  padding: 25px;
+  height: 100%;
+  transition: all 0.2s steps(4);
+}
+
+.pixel-card-hover:hover {
+  transform: translate(-4px, -4px);
+  border-color: var(--neon-green);
+  box-shadow: 8px 8px 0px var(--neon-green);
+}
+
+.pixel-avatar-frame {
+  width: 120px;
+  height: 120px;
+  border: 3px solid var(--neon-magenta);
+  background: #000;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 4px 0px #000;
+}
+
+.pixel-metric {
+  background: #000;
+  border: 2px solid #2A2A3A;
+  padding: 10px 4px;
+}
+.pixel-metric strong { display: block; color: var(--neon-green); font-size: 0.85rem; font-family: 'Pixelify Sans', sans-serif;}
+.pixel-metric span { display: block; font-size: 0.7rem; color: var(--text-dim); }
+
+/* ==========================================================================
+   ELEMENTOS DE INTERAÇÃO (BOTOES / BADGES)
+   ========================================================================== */
+.pixel-btn-primary, .pixel-btn-secondary {
+  border-radius: 0;
+  border: 3px solid #000;
+  font-weight: bold;
+  transition: all 0.15s steps(3);
+}
+
+.pixel-btn-primary {
+  background-color: var(--neon-green);
+  color: #000 !important;
+  box-shadow: 4px 4px 0px var(--neon-magenta);
+}
+
+.pixel-btn-primary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--neon-magenta);
+}
+
+.pixel-btn-secondary {
+  background-color: transparent;
+  color: var(--text-bright) !important;
+  border-color: var(--text-bright);
+  box-shadow: 4px 4px 0px var(--neon-blue);
+}
+
+.pixel-btn-secondary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--neon-blue);
+}
+
+.pixel-tag {
+  background: #1A1A26;
+  border: 2px solid #3A3A4E;
+  color: var(--text-bright);
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+.pixel-tag-sm {
+  background: #000;
+  border: 1px solid #2A2A3A;
+  color: var(--neon-blue);
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  font-family: 'Pixelify Sans', sans-serif;
+  margin-right: 4px;
+  display: inline-block;
+}
+
+/* ==========================================================================
+   PROJETOS & REPOSITÓRIOS
+   ========================================================================== */
+.pixel-project-link { text-decoration: none; }
+.pixel-project-card {
+  background: var(--terminal-bg-alt);
+  border: 3px solid #2A2A3A;
+  box-shadow: 6px 6px 0px #151520;
+  transition: all 0.2s steps(4);
+  overflow: hidden;
+}
+
+.pixel-project-thumb {
+  background: #151520;
+  border-bottom: 3px solid #2A2A3A;
+  height: 180px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pixel-project-thumb img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.pixel-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 255, 102, 0.9);
+  color: #000;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.2s steps(4);
+}
+
+.pixel-project-card:hover {
+  transform: translate(-6px, -6px);
+  border-color: var(--neon-green);
+  box-shadow: 12px 12px 0px var(--neon-green);
+}
+
+.pixel-project-card:hover .pixel-overlay { opacity: 1; }
+
+/* ==========================================================================
+   TIMELINE DE MISSÕES
+   ========================================================================== */
+.pixel-timeline-wrapper {
+  position: relative;
+  padding-left: 40px;
+}
+
+.pixel-timeline-wrapper::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: repeating-linear-gradient(to bottom, #2A2A3A, #2A2A3A 8px, transparent 8px, transparent 16px);
+}
+
+.pixel-timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.pixel-timeline-node {
+  position: absolute;
+  left: -32px;
+  top: 15px;
+  width: 14px;
+  height: 14px;
+  background-color: #2A2A3A;
+  border: 3px solid var(--terminal-bg);
+  outline: 3px solid #2A2A3A;
+}
+
+.pixel-timeline-node.bg-green { background-color: var(--neon-green); outline-color: var(--neon-green); }
+.pixel-timeline-node.bg-magenta { background-color: var(--neon-magenta); outline-color: var(--neon-magenta); }
+
+.pixel-meta-badge {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+/* ==========================================================================
+   CONTATO, LINHAS DE ASSINATURA
+   ========================================================================== */
+.pixel-contact-card {
+  text-decoration: none;
+  display: block;
+  background: var(--terminal-bg-alt);
+  border: 3px solid #2A2A3A;
+  box-shadow: 4px 4px 0px #151520;
+  padding: 25px;
+  transition: all 0.2s steps(4);
+}
+
+.pixel-contact-card:hover {
+  transform: translate(-4px, -4px);
+  border-color: var(--neon-blue);
+  box-shadow: 8px 8px 0px var(--neon-blue);
+}
+
+.pixel-line {
+  height: 4px;
+  background: repeating-linear-gradient(to right, var(--neon-green), var(--neon-green) 10px, transparent 10px, transparent 20px);
+  width: 100px;
+}
+
+.footer { border-top: 3px solid #1F1F2E; background: #050508; }

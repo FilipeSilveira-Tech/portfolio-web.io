@@ -3,368 +3,379 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfólio de Filipe Silveira, estudante de ADS focado em backend, automação e desenvolvimento de sistemas." />
-  <title>Filipe Silveira | Backend Dev_</title>
+  <meta name="description" content="Filipe Silveira — Analista e Desenvolvedor de Sistemas (Backend). Portfólio profissional." />
+  <link rel="shortcut icon" href="src/assets/favicon-novo.png" type="image/x-icon">
+  <title>Filipe Silveira · Analista &amp; Desenvolvedor de Sistemas</title>
 
-  <!-- Google Fonts: Pixelify Sans para títulos e JetBrains Mono para textos limpos -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Pixelify+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-  
-  <!-- Estilo Customizado Pixel Premium -->
+
   <link rel="stylesheet" href="src/css/style.css" />
+
+  <script>
+    // Tema padrão é sempre claro; só muda se o visitante já tiver escolhido escuro antes.
+    (function () {
+      var saved = localStorage.getItem('theme');
+      document.documentElement.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
+    })();
+  </script>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100" tabindex="0">
-  
-  <!-- Efeito de Linhas de Scan (CRT Monitor) muito sutil para imersão -->
-  <div class="crt-overlay"></div>
+<body>
 
-  <!-- Navbar Retro-Futurista -->
-  <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top pixel-nav">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="#home" aria-label="Ir para o início">
-        <span class="pixel-avatar-border">
-          <img src="src/assets/caricatura-pixel-pequeno.png" alt="Filipe Silveira avatar" height="32px">
-        </span>
-        <span class="fw-bold tracking-tight pixel-brand">FILIPE_SILVEIRA_</span>
-      </a>
-      <button class="navbar-toggler pixel-border-sm" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Abrir menu">
-        <span class="navbar-toggler-icon"></span>
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#topo" class="nav__brand">Filipe Silveira</a>
+
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menu">
+        <i class="bi bi-list"></i>
       </button>
-      <div class="collapse navbar-collapse" id="navContent">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-          <li class="nav-item"><a class="nav-link pixel-nav-link" href="#home">01. INÍCIO</a></li>
-          <li class="nav-item"><a class="nav-link pixel-nav-link" href="#sobre">02. SOBRE</a></li>
-          <li class="nav-item"><a class="nav-link pixel-nav-link" href="#habilidades">03. STACK</a></li>
-          <li class="nav-item"><a class="nav-link pixel-nav-link" href="#projetos">04. PROJETOS</a></li>
-          <li class="nav-item"><a class="nav-link pixel-nav-link" href="#trajetoria">05. MISSÕES</a></li>
-          <li class="nav-item ms-lg-2"><a class="btn pixel-btn-primary btn-sm px-3" href="#contato">CONTATO_</a></li>
-        </ul>
-      </div>
+
+      <nav class="nav__links" id="navLinks">
+        <a href="#sobre" class="nav__link">Sobre</a>
+        <a href="#formacao" class="nav__link">Formação</a>
+        <a href="#projetos" class="nav__link">Projetos</a>
+        <a href="#trajetoria" class="nav__link">Trajetória</a>
+        <a href="#contato" class="nav__link nav__link--cta">Contato</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section id="home" class="hero-section d-flex align-items-center position-relative overflow-hidden">
-      <div class="container position-relative z-1">
-        <div class="row align-items-center min-vh-100 py-5">
-          <div class="col-lg-7 hero-copy">
-            <p class="pixel-eyebrow text-green fw-bold text-uppercase mb-3">&gt; ANALISTA E DESENVOLVEDOR DE SISTEMAS // BACKEND</p>
-            <h1 class="display-3 fw-bold text-white pixel-title mb-4">FILIPE SILVEIRA</h1>
-            <p class="hero-kicker text-muted fs-5 mb-3">Otimizando processos analógicos através de código estruturado.</p>
-            <p class="lead text-light-gray mb-4">
-              Do trabalho físico na expedição ao desenvolvimento backend de alto nível. Escrevo APIs previsíveis com Node.js/TypeScript e automações robustas com Python focadas em otimizar rotinas reais de trabalho.
+  <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro" aria-pressed="false">
+    <i class="bi bi-moon-stars theme-toggle__icon theme-toggle__icon--moon"></i>
+    <i class="bi bi-sun theme-toggle__icon theme-toggle__icon--sun"></i>
+  </button>
+
+  <main id="conteudo">
+
+    <!-- HERO -->
+    <section class="hero" id="topo">
+      <div class="hero__inner">
+        <div class="hero__copy reveal">
+          <p class="eyebrow"><span class="status-dot"></span>Disponível para novas oportunidades</p>
+          <h1 class="hero__name">Filipe Silveira</h1>
+          <p class="hero__role">Analista e Desenvolvedor de Sistemas <span class="hero__role-sub">(Backend)</span></p>
+          <p class="hero__lede">
+            Aplico à engenharia de software a mesma disciplina que aprendi organizando operações e
+            processos no chão de fábrica — hoje transformada em APIs, automações e sistemas confiáveis.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="https://www.linkedin.com/in/filipesilveira-dev/" target="_blank" rel="noreferrer">
+              <i class="bi bi-linkedin"></i> LinkedIn
+            </a>
+            <a class="btn btn--ghost" href="https://github.com/FilipeSilveira-Tech" target="_blank" rel="noreferrer">
+              <i class="bi bi-github"></i> GitHub
+            </a>
+            <a class="btn btn--ghost" href="mailto:contato@filipesilveira.dev">
+              <i class="bi bi-envelope"></i> E-mail
+            </a>
+          </div>
+
+          <dl class="meta-row">
+            <div class="meta-row__item">
+              <dt>Foco</dt>
+              <dd>Node.js &amp; TypeScript</dd>
+            </div>
+            <div class="meta-row__item">
+              <dt>Base</dt>
+              <dd>SQL &amp; PostgreSQL</dd>
+            </div>
+            <div class="meta-row__item">
+              <dt>Origem</dt>
+              <dd>Operações &amp; SAP MM/WM/SD</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero__portrait reveal">
+          <div class="portrait-frame">
+            <img src="src/assets/caricatura-pixel-pequeno.png" alt="Foto de Filipe Silveira" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="section" id="sobre">
+      <div class="section__inner">
+        <p class="section__eyebrow">P.01 — Sobre mim</p>
+        <h2 class="section__title">Da operação à engenharia de software</h2>
+
+        <div class="sobre__grid">
+          <div class="sobre__text">
+            <p>
+              Minha trajetória começou na base das operações, como Auxiliar de Serviços Gerais, e evoluiu
+              para a Expedição e o Almoxarifado — até me tornar referência (Key User) no sistema SAP,
+              nos módulos MM, WM e SD. Nesse caminho, aprendi a mapear rotinas, padronizar processos e
+              lidar diretamente com auditorias e fornecedores.
             </p>
-            <div class="d-flex flex-column flex-sm-row gap-3">
-              <a class="btn pixel-btn-primary btn-lg px-4" href="#projetos">[ PROJETOS ]</a>
-              <a class="btn pixel-btn-secondary btn-lg px-4" href="#contato">[ CONTATO ]</a>
+            <p>
+              Essa vivência prática me deu um repertório pouco comum entre desenvolvedores: entendo a
+              dor do usuário final e os gargalos reais de um processo de negócio antes mesmo de escrever
+              a primeira linha de código. Hoje, canalizo essa visão para construir back-ends organizados,
+              APIs previsíveis e automações que resolvem problemas de verdade — não apenas exercícios
+              de código.
+            </p>
+            <p>
+              Atualmente estou em transição de carreira: formado em Análise e Desenvolvimento de Sistemas
+              e cursando Pós-Graduação em Engenharia de Software, aprofundando arquitetura, boas práticas e construção de
+              sistemas backend.
+            </p>
+          </div>
+
+          <div class="sobre__path" aria-label="Linha do tempo resumida da transição de carreira">
+            <div class="path-node">
+              <span class="path-node__year">2021</span>
+              <span class="path-node__label">Operação</span>
             </div>
-            <div class="hero-badges mt-5 d-flex flex-wrap gap-2">
-              <span class="pixel-tag">Node.js</span>
-              <span class="pixel-tag">TypeScript</span>
-              <span class="pixel-tag">Python</span>
-              <span class="pixel-tag">SAP MM/WM</span>
-              <span class="pixel-tag">SQL</span>
+            <span class="path-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+            <div class="path-node">
+              <span class="path-node__year">2023</span>
+              <span class="path-node__label">Processos &amp; SAP</span>
+            </div>
+            <span class="path-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+            <div class="path-node path-node--accent">
+              <span class="path-node__year">2026</span>
+              <span class="path-node__label">Backend &amp; Software</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat">
+            <strong>3+ anos</strong>
+            <span>de experiência prática em operações e processos</span>
+          </div>
+          <div class="stat">
+            <strong>SAP MM · WM · SD</strong>
+            <span>atuação como Key User em módulos de logística</span>
+          </div>
+          <div class="stat">
+            <strong>2026</strong>
+            <span>graduado em Análise e Desenvolvimento de Sistemas</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMAÇÃO -->
+    <section class="section section--alt" id="formacao">
+      <div class="section__inner">
+        <p class="section__eyebrow">P.02 — Formação</p>
+        <h2 class="section__title">Educação e cursos</h2>
+
+        <h3 class="subgroup-title">Faculdade</h3>
+        <div class="edu-grid">
+          <div class="edu-card">
+            <div class="edu-card__top">
+              <span class="tag tag--done">Concluído</span>
+              <span class="mono-date">2024 – 2026</span>
+            </div>
+            <h4>Análise e Desenvolvimento de Sistemas</h4>
+            <p class="edu-card__inst">UNOPAR</p>
+          </div>
+
+          <div class="edu-card">
+            <div class="edu-card__top">
+              <span class="tag tag--progress">Em andamento</span>
+              <span class="mono-date">Início 2026</span>
+            </div>
+            <h4>Engenharia de Software</h4>
+            <p class="edu-card__inst">Estácio</p>
+          </div>
+        </div>
+
+        <h3 class="subgroup-title">Cursos</h3>
+        <div class="course-list">
+          <div class="course-item">
+            <div class="course-item__head">
+              <h4>Desenvolvimento Web Completo</h4>
+              <span class="mono-date">118,5h · Udemy</span>
+            </div>
+            <div class="tags-row">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Bootstrap</span>
+              <span class="tag">ES6</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">API</span>
             </div>
           </div>
 
-          <div class="col-lg-5 mt-5 mt-lg-0">
-            <div class="pixel-card text-center p-4 p-lg-5">
-              <div class="pixel-avatar-frame mx-auto mb-4">
-                <img src="src/assets/caricatura-pixel-pequeno.png" alt="Filipe Caricatura" class="img-fluid">
-              </div>
-              <h2 class="h4 pixel-font fw-bold text-green mb-2">&gt; SYS_OPERATOR</h2>
-              <p class="text-light-gray small mb-4">Orientado a processos rigorosos, arquiteturas eficientes e lógica limpa.</p>
-              <div class="mini-metrics row g-2">
-                <div class="col-4"><div class="pixel-metric"><strong>ADS_5</strong><span>Período</span></div></div>
-                <div class="col-4"><div class="pixel-metric"><strong>SAP_KEY</strong><span>MM/WM/SD</span></div></div>
-                <div class="col-4"><div class="pixel-metric"><strong>STK_LVL</strong><span>TypeScript</span></div></div>
-              </div>
+          <div class="course-item">
+            <div class="course-item__head">
+              <h4>SAP MM — Gerenciamento de Materiais</h4>
+              <span class="mono-date">5,4h · Udemy</span>
+            </div>
+            <div class="tags-row">
+              <span class="tag">Dados Mestres de Materiais</span>
+              <span class="tag">Pedidos de Compra</span>
+              <span class="tag">Entrada de Mercadorias</span>
+              <span class="tag">Fluxo de Mercadoria</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Sobre Section -->
-    <section id="sobre" class="section section-alt">
-      <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-5">
-            <div class="pixel-card p-4 p-lg-5 h-100 border-magenta-shadow">
-              <p class="pixel-label text-magenta mb-2">// 02. HISTÓRICO DE LOGS</p>
-              <h2 class="pixel-title-sm text-white mb-4">Da operação para o código</h2>
-              <p class="text-light-gray">
-                Minha carreira começou de baixo, atuando como auxiliar de serviços gerais. Evolui na expedição, no almoxarifado e migrei para a área administrativa. Essa jornada de chão de fábrica me deu uma visão clara de otimização de tempo e processos.
-              </p>
-              <p class="text-light-gray mb-0">
-                Hoje transformo essa expertise analógica em arquiteturas limpas e scripts automatizados no ecossistema de TI.
-              </p>
+    <!-- PROJETOS -->
+    <section class="section" id="projetos">
+      <div class="section__inner">
+        <p class="section__eyebrow">P.03 — Projetos</p>
+        <h2 class="section__title">Projetos em destaque</h2>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-card__thumb">
+              <img src="src/assets/rfid-marluvas-logo.png" alt="Controle de Almoxarifado via RFID" loading="lazy" />
             </div>
-          </div>
-          <div class="col-lg-7">
-            <div class="row g-3">
-              <div class="col-md-6">
-                <article class="pixel-card-hover">
-                  <div class="text-green mb-3"><i class="bi bi-diagram-3 fs-3"></i></div>
-                  <h3 class="pixel-font text-white h5 fw-bold">&gt; Processos</h3>
-                  <p class="text-light-gray small mb-0">Mapeamento, arquitetura lógica e documentações funcionais sem rodeios.</p>
-                </article>
+            <div class="project-card__body">
+              <h3>Controle de Ativos c/ RFID</h3>
+              <p>Criação de etiquetas RFID para gestão de ativos do setor do almoxarifado como paleteiras e empilhadeiras.</p>
+              <div class="tags-row">
+                <span class="tag">Python</span>
+                <span class="tag">RFID</span>
+                <span class="tag">Tkinter</span>
               </div>
-              <div class="col-md-6">
-                <article class="pixel-card-hover">
-                  <div class="text-green mb-3"><i class="bi bi-code-slash fs-3"></i></div>
-                  <h3 class="pixel-font text-white h5 fw-bold">&gt; Backend</h3>
-                  <p class="text-light-gray small mb-0">Criação de microsserviços e APIs com TypeScript e tratamento rígido de erros.</p>
-                </article>
-              </div>
-              <div class="col-md-6">
-                <article class="pixel-card-hover">
-                  <div class="text-green mb-3"><i class="bi bi-clipboard-data fs-3"></i></div>
-                  <h3 class="pixel-font text-white h5 fw-bold">&gt; Auditoria ERP</h3>
-                  <p class="text-light-gray small mb-0">Domínio SAP MM, WM e SD com foco em rastreabilidade e integridade operacional.</p>
-                </article>
-              </div>
-              <div class="col-md-6">
-                <article class="pixel-card-hover">
-                  <div class="text-green mb-3"><i class="bi bi-lightning-charge fs-3"></i></div>
-                  <h3 class="pixel-font text-white h5 fw-bold">&gt; Scripts</h3>
-                  <p class="text-light-gray small mb-0">Rotinas automatizadas de eliminação de falhas e trabalho manual maçante.</p>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Habilidades Section -->
-    <section id="habilidades" class="section">
-      <div class="container">
-        <div class="text-center mb-5">
-          <p class="pixel-label text-green mb-2">// 03. ARSENAL TÉCNICO</p>
-          <h2 class="pixel-title text-white">TECNOLOGIAS DE COMBATE</h2>
-          <p class="text-muted">Estudo focado em fundamentos profundos, não em modismos.</p>
-        </div>
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-3">
-            <article class="pixel-card-hover text-center h-100">
-              <div class="text-magenta mb-3"><i class="bi bi-braces fs-2"></i></div>
-              <h3 class="pixel-font text-white h5 fw-bold">TypeScript</h3>
-              <p class="text-light-gray small mb-0">Tipagem estrita e POO para APIs sustentáveis e legíveis por equipes.</p>
-            </article>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <article class="pixel-card-hover text-center h-100">
-              <div class="text-magenta mb-3"><i class="bi bi-cpu fs-2"></i></div>
-              <h3 class="pixel-font text-white h5 fw-bold">Node.js</h3>
-              <p class="text-light-gray small mb-0">Motores assíncronos rápidos e conectores de alto rendimento de dados.</p>
-            </article>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <article class="pixel-card-hover text-center h-100">
-              <div class="text-magenta mb-3"><i class="bi bi-window-stack fs-2"></i></div>
-              <h3 class="pixel-font text-white h5 fw-bold">Python</h3>
-              <p class="text-light-gray small mb-0">Extrações eficientes de planilhas, conexões seriais e automação operacional.</p>
-            </article>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <article class="pixel-card-hover text-center h-100">
-              <div class="text-magenta mb-3"><i class="bi bi-database fs-2"></i></div>
-              <h3 class="pixel-font text-white h5 fw-bold">SQL / DB</h3>
-              <p class="text-light-gray small mb-0">Estruturação transacional ACID, queries complexas e normalização de tabelas.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projetos Section -->
-    <section id="projetos" class="section section-alt">
-      <div class="container">
-        <div class="text-center mb-5">
-          <p class="pixel-label text-green mb-2">// 04. DIRETÓRIO DE ARQUIVOS</p>
-          <h2 class="pixel-title text-white">REPOSITÓRIOS_ATIVOS</h2>
-          <p class="text-muted">Projetos desenvolvidos sob rígidos padrões de engenharia de software.</p>
-        </div>
-
-        <div class="row g-4">
-          <!-- Projeto 1 -->
-          <div class="col-lg-4">
-            <a href="https://github.com/FilipeSilveira-Tech/RFID-Almoxarifado-Marluvas" target="_blank" class="pixel-project-link">
-              <article class="pixel-project-card h-100">
-                <div class="pixel-project-thumb position-relative">
-                  <img src="src/assets/rfid-marluvas-logo.png" alt="RFID Marluvas" class="img-fluid w-100">
-                  <div class="pixel-overlay">[ EXECUTE_ ]</div>
-                </div>
-                <div class="p-4">
-                  <h3 class="pixel-font text-white h5 fw-bold">RFID Almoxarifado</h3>
-                  <p class="text-light-gray small">Controle físico de entrada e saída por rádio frequência, facilitando o inventário técnico.</p>
-                  <div class="mt-3">
-                    <span class="pixel-tag-sm">Python</span>
-                    <span class="pixel-tag-sm">RFID</span>
-                    <span class="pixel-tag-sm">Tkinter</span>
-                  </div>
-                </div>
-              </article>
-            </a>
-          </div>
-          <!-- Projeto 2 -->
-          <div class="col-lg-4">
-            <a href="https://github.com/FilipeSilveira-Tech/portfolio-web.io" target="_blank" class="pixel-project-link">
-              <article class="pixel-project-card h-100">
-                <div class="pixel-project-thumb position-relative">
-                  <img src="src/assets/capa-teste.png" alt="Portfolio" class="img-fluid w-100">
-                  <div class="pixel-overlay">[ EXECUTE_ ]</div>
-                </div>
-                <div class="p-4">
-                  <h3 class="pixel-font text-white h5 fw-bold">Portfólio Retro-Cyber</h3>
-                  <p class="text-light-gray small">Estética premium pixelada em alta fidelidade e performance extrema de renderização.</p>
-                  <div class="mt-3">
-                    <span class="pixel-tag-sm">CSS3</span>
-                    <span class="pixel-tag-sm">Bootstrap5</span>
-                    <span class="pixel-tag-sm">Retro_UI</span>
-                  </div>
-                </div>
-              </article>
-            </a>
-          </div>
-          <!-- Projeto 3 -->
-          <div class="col-lg-4">
-            <a href="https://github.com/ShadownJin/ShadownJin" target="_blank" class="pixel-project-link">
-              <article class="pixel-project-card h-100">
-                <div class="pixel-project-thumb position-relative">
-                  <img src="src/assets/shadown.gif" alt="ShadownJin" class="img-fluid w-100">
-                  <div class="pixel-overlay">[ EXECUTE_ ]</div>
-                </div>
-                <div class="p-4">
-                  <h3 class="pixel-font text-white h5 fw-bold">ShadownJin - Bot</h3>
-                  <p class="text-light-gray small">Bot robusto estruturado em Camadas (DDD) e microsserviço assíncrono conectado ao NoSQL.</p>
-                  <div class="mt-3">
-                    <span class="pixel-tag-sm">Node.js</span>
-                    <span class="pixel-tag-sm">TypeScript</span>
-                    <span class="pixel-tag-sm">Firebase</span>
-                  </div>
-                </div>
-              </article>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Trajetória Section -->
-    <section id="trajetoria" class="section">
-      <div class="container">
-        <div class="text-center mb-5">
-          <p class="pixel-label text-green mb-2">// 05. HISTÓRICO DE QUESTS</p>
-          <h2 class="pixel-title text-white">HISTÓRICO_LOG_DO_SISTEMA</h2>
-          <p class="text-muted">A prova de que a experiência real vale muito mais do que certificados superficiais.</p>
-        </div>
-
-        <div class="pixel-timeline-wrapper mx-auto max-w-3xl">
-          <!-- Item 1 -->
-          <article class="pixel-timeline-item">
-            <div class="pixel-timeline-node bg-green"></div>
-            <div class="pixel-card p-4">
-              <div class="d-flex justify-content-between align-items-center flex-wrap mb-2">
-                <h3 class="pixel-font text-white h5 fw-bold mb-0">&gt; Conclusão ADS e Transição</h3>
-                <span class="pixel-meta-badge text-green">[ ATUAL ]</span>
-              </div>
-              <p class="text-light-gray small mb-0">Consolidando o domínio sobre engenharia de software, desenvolvendo microsserviços eficientes e automações práticas de backend.</p>
+              <a class="btn btn--ghost btn--block" href="https://github.com/FilipeSilveira-Tech/RFID-Almoxarifado-Marluvas" target="_blank" rel="noopener">
+                <i class="bi bi-github"></i> Ver repositório
+              </a>
             </div>
           </article>
 
-          <!-- Item 2 -->
-          <article class="pixel-timeline-item">
-            <div class="pixel-timeline-node bg-magenta"></div>
-            <div class="pixel-card p-4">
-              <div class="d-flex justify-content-between align-items-center flex-wrap mb-2">
-                <h3 class="pixel-font text-white h5 fw-bold mb-0">&gt; KeyUser SAP & Almoxarifado</h3>
-                <span class="pixel-meta-badge text-magenta">[ 2023 - 2026 ]</span>
+          <article class="project-card">
+            <div class="project-card__thumb">
+              <img src="src/assets/capa-teste.png" alt="Portfólio Profissional Web" loading="lazy" />
+            </div>
+            <div class="project-card__body">
+              <h3>Portfólio Profissional Web</h3>
+              <p>Este site: interface leve e responsiva construída para apresentar trajetória, formação e projetos, sem frameworks pesados.</p>
+              <div class="tags-row">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
               </div>
-              <p class="text-light-gray small mb-0">Evolução acelerada para KeyUser SAP (módulos MM, WM e SD). Atuação direta no desenho de fluxo da operação e agindo diretamente na gestão do almoxarifado.</p>
+              <a class="btn btn--ghost btn--block" href="https://github.com/FilipeSilveira-Tech/portfolio-web.io" target="_blank" rel="noopener">
+                <i class="bi bi-github"></i> Ver repositório
+              </a>
             </div>
           </article>
 
-          <!-- Item 3 -->
-          <article class="pixel-timeline-item">
-            <div class="pixel-timeline-node"></div>
-            <div class="pixel-card p-4">
-              <div class="d-flex justify-content-between align-items-center flex-wrap mb-2">
-                <h3 class="pixel-font text-white h5 fw-bold mb-0">&gt; Expedição Operacional</h3>
-                <span class="pixel-meta-badge">[ 2022 - 2023 ]</span>
-              </div>
-              <p class="text-light-gray small mb-0">Gerenciamento físico de saídas de mercadorias, conciliação direta de inventários e operação de sistemas logísticos sob alta demanda.</p>
+          <article class="project-card">
+            <div class="project-card__thumb">
+              <img src="src/assets/NC-Control-Logo.png" alt="ShadownJin — Bot &amp; Microsserviço" loading="lazy" width="90" />
             </div>
-          </article>
-
-          <!-- Item 4 -->
-          <article class="pixel-timeline-item">
-            <div class="pixel-timeline-node"></div>
-            <div class="pixel-card p-4">
-              <div class="d-flex justify-content-between align-items-center flex-wrap mb-2">
-                <h3 class="pixel-font text-white h5 fw-bold mb-0">&gt; Início de Carreira (Marluvas)</h3>
-                <span class="pixel-meta-badge">[ 2021 - 2022 ]</span>
+            <div class="project-card__body">
+              <h3>NC Control</h3>
+              <p>Sistema desenvolvido para otimizar, centralizar e rastrear a gestão de divergências no recebimento de materiais de almoxarifado.</p>
+              <div class="tags-row">
+                <span class="tag">HTML</span>
+                <span class="tag">Javascript</span>
+                <span class="tag">IndexDB</span>
               </div>
-              <p class="text-light-gray small mb-0">Entrada como Auxiliar de Serviços Gerais. Experiência de base que estruturou rigor pessoal, organização metódica e respeito por processos operacionais estruturados.</p>
+              <a class="btn btn--ghost btn--block" href="https://github.com/FilipeSilveira-Tech/Gestor-de-Divergencias" target="_blank" rel="noopener">
+                <i class="bi bi-github"></i> Ver repositório
+              </a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Contato Section -->
-    <section id="contato" class="section section-contact">
-      <div class="container text-center">
-        <p class="pixel-label text-green mb-2">// 06. CONEXÃO EXTERNA</p>
-        <h2 class="pixel-title text-white mb-4">INICIAR_TRANSMISSÃO_</h2>
-        <p class="text-light-gray max-w-md mx-auto mb-5">Se a sua equipe ou infraestrutura backend precisa de alguém metódico, direto e focado em resolver bugs reais, mande um ping.</p>
+    <!-- TRAJETÓRIA -->
+    <section class="section section--alt" id="trajetoria">
+      <div class="section__inner">
+        <p class="section__eyebrow">P.04 — Histórico profissional</p>
+        <h2 class="section__title">Minha trajetória</h2>
 
-        <div class="row g-4 justify-content-center">
-          <div class="col-md-4">
-            <a class="pixel-contact-card" href="mailto:contato@filipesilveira.dev">
-              <i class="bi bi-envelope-check-fill text-green fs-2"></i>
-              <h3 class="pixel-font text-white h6 fw-bold mt-3">EMAIL_</h3>
-              <p class="text-light-gray small mb-0">contato@filipesilveira.dev</p>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a class="pixel-contact-card" href="https://github.com/FilipeSilveira-Tech" target="_blank" rel="noreferrer">
-              <i class="bi bi-github text-magenta fs-2"></i>
-              <h3 class="pixel-font text-white h6 fw-bold mt-3">GITHUB_</h3>
-              <p class="text-light-gray small mb-0">FilipeSilveira-Tech</p>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a class="pixel-contact-card" href="https://www.linkedin.com/in/filipesilveira-dev/" target="_blank" rel="noreferrer">
-              <i class="bi bi-linkedin text-blue fs-2"></i>
-              <h3 class="pixel-font text-white h6 fw-bold mt-3">LINKEDIN_</h3>
-              <p class="text-light-gray small mb-0">filipesilveira-dev</p>
-            </a>
-          </div>
-        </div>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__marker"></span>
+            <div class="timeline__card">
+              <div class="timeline__head">
+                <h3>Início de carreira</h3>
+                <span class="mono-date">2021 – 2022</span>
+              </div>
+              <p>Entrada como Auxiliar de Serviços Gerais. Base para disciplina, organização e visão completa das etapas de suporte de uma grande operação.</p>
+            </div>
+          </li>
 
-        <div class="signature-box mt-5 text-center">
-          <div class="pixel-line mx-auto mb-4"></div>
-          <p class="mb-1 pixel-font text-white">FILIPE_SILVEIRA (DEV_SYS_OPER)</p>
-          <p class="text-muted small">Todos os direitos reservados • &copy 2026</p>
+          <li class="timeline__item">
+            <span class="timeline__marker"></span>
+            <div class="timeline__card">
+              <div class="timeline__head">
+                <h3>Operações e Expedição Logística</h3>
+                <span class="mono-date">2022 – 2023</span>
+              </div>
+              <p>Movimentação física de mercadorias, expedição de pedidos, conferência de documentação fiscal e conciliação de estoques.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item">
+            <span class="timeline__marker"></span>
+            <div class="timeline__card">
+              <div class="timeline__head">
+                <h3>Key User SAP &amp; Gestão de Almoxarifado</h3>
+                <span class="mono-date">2023 – 2026</span>
+              </div>
+              <p>Referência nos módulos SAP MM, WM e SD: mapeamento de rotinas, parametrização operacional, auditoria de inventário e suporte a processos logísticos.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item timeline__item--active">
+            <span class="timeline__marker"></span>
+            <div class="timeline__card">
+              <div class="timeline__head">
+                <h3>Desenvolvimento Backend &amp; Transição de Carreira</h3>
+                <span class="tag tag--done">Atual</span>
+              </div>
+              <p>Foco em engenharia de software, arquitetura de sistemas e desenvolvimento backend, aliado à continuidade dos estudos em Engenharia de Software.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section" id="contato">
+      <div class="section__inner section__inner--center">
+        <p class="section__eyebrow">P.05 — Contato</p>
+        <h2 class="section__title">Vamos conversar</h2>
+        <p class="section__lead">
+          Estou disponível para novas oportunidades em Desenvolvimento Backend e Análise de Sistemas.
+        </p>
+
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:contato@filipesilveira.dev">
+            <i class="bi bi-envelope-at-fill"></i>
+            <h3>E-mail</h3>
+            <span>contato@filipesilveira.dev</span>
+          </a>
+          <a class="contact-card" href="https://github.com/FilipeSilveira-Tech" target="_blank" rel="noreferrer">
+            <i class="bi bi-github"></i>
+            <h3>GitHub</h3>
+            <span>FilipeSilveira-Tech</span>
+          </a>
+          <a class="contact-card" href="https://www.linkedin.com/in/filipesilveira-dev/" target="_blank" rel="noreferrer">
+            <i class="bi bi-linkedin"></i>
+            <h3>LinkedIn</h3>
+            <span>filipesilveira-dev</span>
+          </a>
         </div>
       </div>
     </section>
+
   </main>
 
-  <footer class="footer py-4 text-center">
-    <div class="container">
-      <small class="text-muted pixel-font" style="font-size: 0.75rem;">RUNNING_ON_BOOTSTRAP_5 // PROD_BUILD_OK</small>
-    </div>
+  <footer class="footer">
+    <p>&copy; 2026 Filipe Silveira — Analista e Desenvolvedor de Sistemas (Backend)</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="src/js/script.js"></script>
 </body>
 </html>
